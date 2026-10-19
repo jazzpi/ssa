@@ -1,0 +1,6 @@
+*.ipynb
+.ipynb_checkpoints/
+_site/
+result
+.vscode/*
+!.vscode/extensions.json
