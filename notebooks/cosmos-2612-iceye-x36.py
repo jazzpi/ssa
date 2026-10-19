@@ -194,6 +194,9 @@ fig.suptitle(
 )
 
 (l_dist,) = dist.plot(all_t[mask], all_dist[mask], color="tab:blue")
+dist.axhline(min_dist_value, color="tab:red", linestyle="--", label="Minimum distance")
+dist.axvline(min_dist_time, color="tab:red", linestyle="--")
+dist.legend()
 dist.set_ylim(0, 2000)
 dist.set_ylabel("Distance [m]", color=l_dist.get_color())
 dist.grid(True)
