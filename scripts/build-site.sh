@@ -12,7 +12,7 @@ mkdir -p "$out"
 
 for py in notebooks/*.py; do
   name=$(basename "$py" .py)
-  jupytext --to ipynb --set-kernel python3 --execute --output "$work/$name.ipynb" "$py"
+  jupytext --to ipynb --set-kernel python3 --execute --run-path "$(dirname "$py")" --output "$work/$name.ipynb" "$py"
   jupyter nbconvert --to html --output-dir "$out" "$work/$name.ipynb"
 done
 
